@@ -1,0 +1,24 @@
+language: rust
+rust:
+  - stable
+  - beta
+  - nightly
+addons:
+  apt:
+    packages:
+      - llvm
+      - llvm-3.1
+      - llvm-3.2
+      - llvm-3.3
+      - llvm-3.4
+      - llvm-3.5
+      - llvm-3.6
+      - llvm-3.7
+      - llvm-3.8
+before_script:
+  - echo $(which llvm_config)
+  - echo $(which llvm_config-3.8)
+  - echo $(which llvm-config)
+  - echo $(which llvm-config-3.8)
+  - export LLVM_CONFIG=$(which llvm-config)
+sudo: false
